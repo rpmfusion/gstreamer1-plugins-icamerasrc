@@ -1,5 +1,5 @@
-%global commit 3b7cdb93071360aacebb4e808ee71bb47cf90b30
-%global commitdate 20220926
+%global commit 528a6f177732def4d5ebc17927220d8823bc8fdc
+%global commitdate 20231023
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           gstreamer1-plugins-icamerasrc
@@ -43,6 +43,7 @@ autoreconf --verbose --force --install --make
 %build
 export CHROME_SLIM_CAMHAL=ON
 export STRIP_VIRTUAL_CHANNEL_CAMHAL=ON
+export PKG_CONFIG_PATH="/usr/lib64/pkgconfig"
 %configure
 %make_build
 
@@ -61,6 +62,9 @@ export STRIP_VIRTUAL_CHANNEL_CAMHAL=ON
 %{_libdir}/pkgconfig/*
 
 %changelog
+* Fri Mar 15 2024 Kate Hsuan <hpa@redhat.com> - 0.0-6.20231023git528a6f1
+- Update to the latest upstream commit
+
 * Fri Feb 17 2023 Kate Hsuan <hpa@redhat.com> - 0.0-5.20220926git3b7cdb9
 - A few minor revisions includes
 - Removed unnecessary %dir
