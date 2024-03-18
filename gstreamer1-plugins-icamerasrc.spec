@@ -1,11 +1,11 @@
-%global commit 3b7cdb93071360aacebb4e808ee71bb47cf90b30
-%global commitdate 20220926
+%global commit 528a6f177732def4d5ebc17927220d8823bc8fdc
+%global commitdate 20231023
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           gstreamer1-plugins-icamerasrc
 Summary:        GStreamer 1.0 Intel IPU6 camera plug-in
 Version:        0.0
-Release:        8.%{commitdate}git%{shortcommit}%{?dist}
+Release:        9.%{commitdate}git%{shortcommit}%{?dist}
 License:        LGPLv2
 
 Source0:        https://github.com/intel/icamerasrc/archive/%{commit}/icamerasrc-%{shortcommit}.tar.gz
@@ -43,6 +43,7 @@ autoreconf --verbose --force --install --make
 %build
 export CHROME_SLIM_CAMHAL=ON
 export STRIP_VIRTUAL_CHANNEL_CAMHAL=ON
+export PKG_CONFIG_PATH="/usr/lib64/pkgconfig"
 %configure
 %make_build
 
@@ -61,6 +62,9 @@ export STRIP_VIRTUAL_CHANNEL_CAMHAL=ON
 %{_libdir}/pkgconfig/*
 
 %changelog
+* Fri Mar 15 2024 Kate Hsuan <hpa@redhat.com> - 0.0-9.20231023git528a6f1
+- Update to the latest upstream commit
+
 * Sun Feb 04 2024 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 0.0-8.20220926git3b7cdb9
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild
 
