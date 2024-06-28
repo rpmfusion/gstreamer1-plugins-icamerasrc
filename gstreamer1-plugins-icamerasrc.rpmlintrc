@@ -1,0 +1,2 @@
+addFilter("W: no-documentation")
+addFilter("E: incorrect-fsf-address")
