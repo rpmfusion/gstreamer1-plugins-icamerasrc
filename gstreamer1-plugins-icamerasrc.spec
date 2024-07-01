@@ -21,8 +21,10 @@ BuildRequires:  ipu6-camera-hal-devel >= 0.0-18
 BuildRequires:  gcc
 BuildRequires:  g++
 BuildRequires:  libdrm-devel
+BuildRequires:  libva-devel
 BuildRequires:  gstreamer1-devel
 BuildRequires:  gstreamer1-plugins-base-devel
+BuildRequires:  pkgconfig(gstreamer-va-1.0)
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  libtool
