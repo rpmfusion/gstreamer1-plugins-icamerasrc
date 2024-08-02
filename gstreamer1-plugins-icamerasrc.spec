@@ -10,7 +10,7 @@
 Name:           gstreamer1-plugins-icamerasrc
 Summary:        GStreamer 1.0 Intel IPU6 camera plug-in
 Version:        0.0
-Release:        10.%{commitdate}git%{shortcommit}%{?dist}
+Release:        11.%{commitdate}git%{shortcommit}%{?dist}
 License:        LGPLv2
 URL:            https://github.com/intel/icamerasrc/tree/icamerasrc_slim_api
 
@@ -69,6 +69,9 @@ export STRIP_VIRTUAL_CHANNEL_CAMHAL=ON
 %{_libdir}/pkgconfig/*
 
 %changelog
+* Fri Aug 02 2024 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 0.0-11.20240606git1baecb1
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_41_Mass_Rebuild
+
 * Mon Jun 24 2024 Hans de Goede <hdegoede@redhat.com> - 0.0-10.20240606git1baecb1
 - Update to commit 1baecb1a466ad610042e437d963cb38a4cfcf592
 - Switch to using hal-adaptor to dispatch between different libcamhal builds
