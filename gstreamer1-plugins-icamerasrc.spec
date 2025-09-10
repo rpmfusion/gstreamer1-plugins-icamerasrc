@@ -1,5 +1,5 @@
-%global commit ee8526451ca1bb4957702de2f46138b63151f34c
-%global commitdate 20241129
+%global commit 7f90219b0cdc00b263415e09eb8c3687daf06ab9
+%global commitdate 20250325
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 # The gstreamer provides generator causes libhal_adaptor.so init/constructor
@@ -10,7 +10,7 @@
 Name:           gstreamer1-plugins-icamerasrc
 Summary:        GStreamer 1.0 Intel IPU6 camera plug-in
 Version:        0.0
-Release:        14.%{commitdate}git%{shortcommit}%{?dist}
+Release:        15.%{commitdate}git%{shortcommit}%{?dist}
 License:        LGPL-2.1-only
 URL:            https://github.com/intel/icamerasrc/tree/icamerasrc_slim_api
 
@@ -69,6 +69,9 @@ export STRIP_VIRTUAL_CHANNEL_CAMHAL=ON
 %{_libdir}/pkgconfig/*
 
 %changelog
+* Wed Sep 10 2025 Kate Hsuan <hpa@redhat.com> - 0.0-15.20250325git7f90219
+- Update to upstream commit 7f90219b0cdc00b263415e09eb8c3687daf06ab9
+
 * Sun Jul 27 2025 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 0.0-14.20241129gitee85264
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_43_Mass_Rebuild
 
